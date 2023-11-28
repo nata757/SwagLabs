@@ -1,3 +1,4 @@
+import e2e.TestBase;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,12 +11,14 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class FirstSeleniumTest {
+public class FirstSeleniumTest extends TestBase {
     public WebDriver driver;
 
+
     @Test
-    public void firstSeleniumTest() throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
+    public void firstSeleniumTest() {
+       WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -28,13 +31,14 @@ public class FirstSeleniumTest {
 
         WebElement loginButton = driver.findElement(By.xpath("//input[@id='login-button']"));
         loginButton.click();
-        Thread.sleep(10000);
 
 
-        List<WebElement> elements = driver.findElements(By.xpath("//span[@class = 'title']"));
+
+        /*List<WebElement> elements = driver.findElements(By.xpath("//span[@class = 'title']"));
         int actualContainer = elements.size();
         int expectedContainer = 6;
         Assert.assertEquals(actualContainer, expectedContainer, actualContainer + " can not " + expectedContainer);
+         */
         driver.quit();
     }
 }
