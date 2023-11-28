@@ -1,4 +1,5 @@
 import e2e.TestBase;
+import e2e.pages.InventoryPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,11 +35,11 @@ public class FirstSeleniumTest extends TestBase {
 
 
 
-        /*List<WebElement> elements = driver.findElements(By.xpath("//span[@class = 'title']"));
+        List<WebElement> elements = driver.findElements(By.xpath("//*[@class='inventory_list']"));
         int actualContainer = elements.size();
-        int expectedContainer = 6;
+        int expectedContainer = 1;
         Assert.assertEquals(actualContainer, expectedContainer, actualContainer + " can not " + expectedContainer);
-         */
+
         driver.quit();
     }
 }
