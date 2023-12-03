@@ -28,6 +28,7 @@ public class FirstSeleniumTest {
         driver.get("https://www.saucedemo.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
         /*driver.get("https://www.avito.ru/");
         WebElement searchForm = driver.findElement(By.xpath("//input[@class='input-input-Zpzc1']"));
         searchForm.sendKeys("Audi", Keys.ENTER);
