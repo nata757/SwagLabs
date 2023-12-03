@@ -12,7 +12,7 @@ public class LoginPage  extends BasePage {
     @FindBy(xpath = "//input[@id='password']")
     WebElement passwordInput;
     @FindBy(xpath = "//input[@id='login-button']")
-    WebElement loginButton;
+    public WebElement loginButton;
     public void login(String email,String password){
         userNameInput.sendKeys(email);
         passwordInput.sendKeys(password);
